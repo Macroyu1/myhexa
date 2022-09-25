@@ -23,7 +23,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/usr/catkin_ws/src/uav_simulator/uav_gazebo/meshes/base_link.STL</uri>
+            <uri>model://myhexa/meshes/base_link.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -112,7 +112,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/usr/catkin_ws/src/uav_simulator/uav_gazebo/meshes/rotor_1.STL</uri>
+            <uri>model://myhexa/meshes/rotor_1_cw.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -205,7 +205,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/usr/catkin_ws/src/uav_simulator/uav_gazebo/meshes/rotor_2.STL</uri>
+            <uri>model://myhexa/meshes/rotor_2_ccw.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -297,7 +297,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/usr/catkin_ws/src/uav_simulator/uav_gazebo/meshes/rotor_3.STL</uri>
+            <uri>model://myhexa/meshes/rotor_3_cw.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -389,7 +389,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/usr/catkin_ws/src/uav_simulator/uav_gazebo/meshes/rotor_4.STL</uri>
+            <uri>model://myhexa/meshes/rotor_4_cw.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -481,7 +481,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/usr/catkin_ws/src/uav_simulator/uav_gazebo/meshes/rotor_5.STL</uri>
+            <uri>model://myhexa/meshes/rotor_5_ccw.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -573,7 +573,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/usr/catkin_ws/src/uav_simulator/uav_gazebo/meshes/rotor_6.STL</uri>
+            <uri>model://myhexa/meshes/rotor_6_ccw.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -900,7 +900,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/usr/catkin_ws/src/uav_simulator/uav_gazebo/meshes/servo_link.STL</uri>
+            <uri>model://myhexa/meshes/servo_link.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -916,7 +916,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>/home/usr/catkin_ws/src/uav_simulator/uav_gazebo/meshes/servo_link.STL</uri>
+            <uri>model://myhexa/meshes/servo_link.STL</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -1298,6 +1298,7 @@
         <jointName>rotor_4_joint</jointName>
         <multiplier>-1200</multiplier>
         <controlVelocitySlowdownSim>1</controlVelocitySlowdownSim>
+      </control>
 <!--///////////////////////////////////////////////////////////////////////////////////////////
                          5 \ -5° 1010
 ///////////////////////////////////////////////////////////////////////////////////////////////-->
