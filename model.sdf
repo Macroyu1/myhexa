@@ -120,7 +120,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://myhexa/meshes/rotor_1_cw.STL</uri>
+            <uri>model://myhexa/meshes/rotor_1.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -216,7 +216,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://myhexa/meshes/rotor_2_ccw.STL</uri>
+            <uri>model://myhexa/meshes/rotor_2.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -311,7 +311,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://myhexa/meshes/rotor_3_cw.STL</uri>
+            <uri>model://myhexa/meshes/rotor_3.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -406,7 +406,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://myhexa/meshes/rotor_4_cw.STL</uri>
+            <uri>model://myhexa/meshes/rotor_4.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -501,7 +501,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://myhexa/meshes/rotor_5_ccw.STL</uri>
+            <uri>model://myhexa/meshes/rotor_5.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -596,7 +596,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://myhexa/meshes/rotor_6_ccw.STL</uri>
+            <uri>model://myhexa/meshes/rotor_6.STL</uri>
           </mesh>
         </geometry>
         <material>
