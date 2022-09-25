@@ -1,6 +1,12 @@
+<!--***********************************************************************************-->
+<!--                                  model description                                -->
+<!--***********************************************************************************-->
 <?xml version='1.0'?>
 <sdf version='1.7'>
   <model name='myhexa'>
+<!--***********************************************************************************-->
+<!--                             base link model description                           -->
+<!--***********************************************************************************-->
     <link name='base_link'>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
@@ -89,7 +95,9 @@
       </collision>
     </link>
 
-   
+<!--***********************************************************************************-->
+<!--                              rotor1 model description                             -->
+<!--***********************************************************************************--> 
     <link name='rotor_1'>
       <pose>-0 0.28 0.026 0 -0 -0.5236</pose>
       <inertial>
@@ -182,6 +190,9 @@
         </surface>
       </collision>
     </link>
+<!--***********************************************************************************-->
+<!--                              rotor2 model description                             -->
+<!--***********************************************************************************--> 
     <link name='rotor_2'>
       <pose>-0 -0.28 0.026
        0 -0 -0.5236</pose>
@@ -275,6 +286,9 @@
         </surface>
       </collision>
     </link>
+<!--***********************************************************************************-->
+<!--                              rotor3 model description                             -->
+<!--***********************************************************************************--> 
     <link name='rotor_3'>
       <pose>-0.24249 -0.14 0.026 0 -0 -0.5236</pose>
       <inertial>
@@ -367,6 +381,9 @@
         </surface>
       </collision>
     </link>
+<!--***********************************************************************************-->
+<!--                              rotor4 model description                           -->
+<!--***********************************************************************************--> 
     <link name='rotor_4'>
       <pose>0.24249 0.14 0.026 0 -0 -0.5236</pose>
       <inertial>
@@ -459,6 +476,9 @@
         </surface>
       </collision>
     </link>
+<!--***********************************************************************************-->
+<!--                              rotor5 model description                             -->
+<!--***********************************************************************************--> 
     <link name='rotor_5'>
       <pose>-0.24249 0.14 0.026 0 -0 -0.5236</pose>
       <inertial>
@@ -551,6 +571,9 @@
         </surface>
       </collision>
     </link>
+<!--***********************************************************************************-->
+<!--                              rotor6 model description                             -->
+<!--***********************************************************************************--> 
     <link name='rotor_6'>
       <pose>0.24249 -0.14 0.026 0 -0 -0.5236</pose>
       <inertial>
@@ -643,8 +666,222 @@
         </surface>
       </collision>
     </link>
+<!--***********************************************************************************-->
+<!--                               rotor1 joint                                        -->
+<!--       Tips:  joint 1 parent link is servo_link , others' are base_link            -->
+<!--***********************************************************************************--> 
+    <joint name='rotor_1_joint' type='revolute'>
+      <parent>servo_link</parent>
+      <child>rotor_1</child>
+      <pose>-0 0 0 0 -0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower><!-- ±1 : ±45 °-->
+          <upper>1e+16</upper>
+          <effort>-1</effort>
+          <velocity>-10</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<!--***********************************************************************************-->
+<!--                                    joint 2                                        -->
+<!--***********************************************************************************-->
+    <joint name='rotor_2_joint' type='revolute'>
+      <parent>base_link</parent>
+      <child>rotor_2</child>
+      <pose>0 0 0 0 -0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+          <effort>-1</effort>
+          <velocity>-10</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<!--***********************************************************************************-->
+<!--                                    joint 3                                        -->
+<!--***********************************************************************************-->
+    <joint name='rotor_3_joint' type='revolute'>
+      <parent>base_link</parent>
+      <child>rotor_3</child>
+      <pose>0 0 0 0 -0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+          <effort>-1</effort>
+          <velocity>-10</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<!--***********************************************************************************-->
+<!--                                    joint 4                                        -->
+<!--***********************************************************************************-->
+    <joint name='rotor_4_joint' type='revolute'>
+      <parent>base_link</parent>
+      <child>rotor_4</child>
+      <pose>-0 0 0 0 -0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+          <effort>-1</effort>
+          <velocity>-10</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<!--***********************************************************************************-->
+<!--                                    joint 5                                        -->
+<!--***********************************************************************************-->
+    <joint name='rotor_5_joint' type='revolute'>
+      <parent>base_link</parent>
+      <child>rotor_5</child>
+      <pose>0 0 0 0 -0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+          <effort>-1</effort>
+          <velocity>-10</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<!--***********************************************************************************-->
+<!--                                    joint 6                                        -->
+<!--***********************************************************************************-->
+    <joint name='rotor_6_joint' type='revolute'>
+      <parent>base_link</parent>
+      <child>rotor_6</child>
+      <pose>0 -0 0 0 -0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+          <effort>-1</effort>
+          <velocity>-10</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
 
 
+<!--***********************************************************************************-->
+<!--                                       imu                                         -->
+<!--***********************************************************************************-->
     <link name='imu_link'>
       <pose>0 0 0 0 0 3.1415927</pose>
       <inertial>
@@ -682,202 +919,11 @@
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
-
-    <joint name='rotor_1_joint' type='revolute'>
-      <parent>servo_link</parent>
-      <child>rotor_1</child>
-      <pose>-0 0 0 0 -0 0</pose>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-          <effort>-1</effort>
-          <velocity>-10</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-          <damping>0</damping>
-          <friction>0</friction>
-        </dynamics>
-      </axis>
-      <physics>
-        <ode>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-          <suspension>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </suspension>
-        </ode>
-      </physics>
-    </joint>
-    <joint name='rotor_2_joint' type='revolute'>
-      <parent>base_link</parent>
-      <child>rotor_2</child>
-      <pose>0 0 0 0 -0 0</pose>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-          <effort>-1</effort>
-          <velocity>-10</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-          <damping>0</damping>
-          <friction>0</friction>
-        </dynamics>
-      </axis>
-      <physics>
-        <ode>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-          <suspension>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </suspension>
-        </ode>
-      </physics>
-    </joint>
-    <joint name='rotor_3_joint' type='revolute'>
-      <parent>base_link</parent>
-      <child>rotor_3</child>
-      <pose>0 0 0 0 -0 0</pose>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-          <effort>-1</effort>
-          <velocity>-10</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-          <damping>0</damping>
-          <friction>0</friction>
-        </dynamics>
-      </axis>
-      <physics>
-        <ode>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-          <suspension>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </suspension>
-        </ode>
-      </physics>
-    </joint>
-    <joint name='rotor_4_joint' type='revolute'>
-      <parent>base_link</parent>
-      <child>rotor_4</child>
-      <pose>-0 0 0 0 -0 0</pose>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-          <effort>-1</effort>
-          <velocity>-10</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-          <damping>0</damping>
-          <friction>0</friction>
-        </dynamics>
-      </axis>
-      <physics>
-        <ode>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-          <suspension>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </suspension>
-        </ode>
-      </physics>
-    </joint>
-    <joint name='rotor_5_joint' type='revolute'>
-      <parent>base_link</parent>
-      <child>rotor_5</child>
-      <pose>0 0 0 0 -0 0</pose>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-          <effort>-1</effort>
-          <velocity>-10</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-          <damping>0</damping>
-          <friction>0</friction>
-        </dynamics>
-      </axis>
-      <physics>
-        <ode>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-          <suspension>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </suspension>
-        </ode>
-      </physics>
-    </joint>
-    <joint name='rotor_6_joint' type='revolute'>
-      <parent>base_link</parent>
-      <child>rotor_6</child>
-      <pose>0 -0 0 0 -0 0</pose>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-          <effort>-1</effort>
-          <velocity>-10</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-          <damping>0</damping>
-          <friction>0</friction>
-        </dynamics>
-      </axis>
-      <physics>
-        <ode>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-          <suspension>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </suspension>
-        </ode>
-      </physics>
-    </joint>
-
-
-
+<!--***********************************************************************************-->
+<!--                                     servo                                         -->
+<!--                        Cmd : servo set (num) (pwm)                                -->
+<!--                     rotor_3 : 990      rotor_5 : 1010                             -->
+<!--***********************************************************************************-->
     <link name='servo_link'>
     <pose>-0 0.2809 0.024 1.5708 -0 0</pose>
       <inertial>
@@ -1001,23 +1047,12 @@
     </joint>
 
     
-    
-    <!-- <include>
-      <uri>model://sonar</uri>
-    </include>
-    <joint name="sonar_joint" type="revolute">
-      <child>sonar_model::link</child>
-      <parent>typhoon_h480::base_link</parent>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <upper>0</upper>
-          <lower>0</lower>
-        </limit>
-      </axis>
-    </joint> -->
-
-    <!-- plugins -->
+<!--***********************************************************************************-->
+<!--                                    plugins                                        -->
+<!--***********************************************************************************-->
+<!--                set the parameter of the rotors with the gazebo library            -->
+<!--  the value is only set for ppnnpn ,or you can switch the forward value of 4 and 6 -->
+<!--***********************************************************************************-->
     <plugin name="rotor_1_blade_1" filename="libLiftDragPlugin.so">
       <a0>0.3</a0>
       <alpha_stall>1.4</alpha_stall>
@@ -1130,7 +1165,7 @@
       <area>0.002</area>
       <air_density>1.2041</air_density>
       <cp>0.0 0.084 0</cp>
-      <forward>1 0 0</forward>
+      <forward>1 0 0</forward><!--you need change it to (-1 0 0) when used pnpnpn-->
       <upward>0 0 1</upward>
       <link_name>rotor_4</link_name>
     </plugin>
@@ -1146,7 +1181,7 @@
       <area>0.002</area>
       <air_density>1.2041</air_density>
       <cp>0.0 -0.084 0</cp>
-      <forward>-1 0 0</forward>
+      <forward>-1 0 0</forward><!--you need change it to (1 0 0) when used pnpnpn-->
       <upward>0 0 1</upward>
       <link_name>rotor_4</link_name>
     </plugin>
@@ -1196,7 +1231,7 @@
       <area>0.002</area>
       <air_density>1.2041</air_density>
       <cp>0.0 0.084 0</cp>
-      <forward>-1 0 0</forward>
+      <forward>-1 0 0</forward><!--you need change it to (1 0 0) when used pnpnpn-->
       <upward>0 0 1</upward>
       <link_name>rotor_6</link_name>
     </plugin>
@@ -1212,14 +1247,14 @@
       <area>0.002</area>
       <air_density>1.2041</air_density>
       <cp>0.0 -0.084 0</cp>
-      <forward>1 0 0</forward>
+      <forward>1 0 0</forward><!--you need change it to (1 0 0) when used pnpnpn-->
       <upward>0 0 1</upward>
       <link_name>rotor_6</link_name>
     </plugin>
 
-    
-
-
+<!--***********************************************************************************-->
+<!--                           set the apm output channel                              -->
+<!--***********************************************************************************-->
     <plugin name="ArduCopter_Plugin" filename="libArduPilotPlugin.so">
       <fdm_addr>127.0.0.1</fdm_addr>
       <fdm_port_in>9002</fdm_port_in>
@@ -1268,10 +1303,10 @@
         <multiplier>1200</multiplier>
         <controlVelocitySlowdownSim>1</controlVelocitySlowdownSim>
       </control>
-<!--///////////////////////////////////////////////////////////////////////////////////////////
-                         3 \ +5° 990
-///////////////////////////////////////////////////////////////////////////////////////////////-->
-      <!-- <control channel="2">
+<!--***********************************************************************************-->
+<!--                                3 \ +5° 990                                        -->
+<!--***********************************************************************************-->
+      <control channel="2">
         <type>VELOCITY</type>
         <offset>0</offset>
         <p_gain>0.20</p_gain>
@@ -1284,7 +1319,7 @@
         <jointName>rotor_3_joint</jointName>
         <multiplier>-1200</multiplier>
         <controlVelocitySlowdownSim>1</controlVelocitySlowdownSim>
-      </control> -->
+      </control>
       <control channel="3">
         <type>VELOCITY</type>
         <offset>0</offset>
@@ -1299,9 +1334,9 @@
         <multiplier>-1200</multiplier>
         <controlVelocitySlowdownSim>1</controlVelocitySlowdownSim>
       </control>
-<!--///////////////////////////////////////////////////////////////////////////////////////////
-                         5 \ -5° 1010
-///////////////////////////////////////////////////////////////////////////////////////////////-->
+<!--***********************************************************************************-->
+<!--                                5 \ -5° 1010                                       -->
+<!--***********************************************************************************-->
       <control channel="4">
         <type>VELOCITY</type>
         <offset>0</offset>
@@ -1344,3 +1379,4 @@
   <static>0</static>
   </model>
 </sdf>
+<!--                                      End of the model                                 -->
